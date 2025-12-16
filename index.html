@@ -437,7 +437,7 @@ document.getElementById('sanctionsForm').addEventListener('submit',e=>{
     const items=ukEntityEntries.length
       ? ukEntityEntries.map(entry=>`<li>${entry.name} (UK Consolidated Group ID: ${entry.id})</li>`).join('')
       : '<li>No UK consolidated group entries provided.</li>';
-    return `<p><strong>4. The following entries have been made and are now subject to an asset freeze [${date}]</strong></p><ul class="uk-entity-list">${items}</ul>`;
+    return `<p><strong>The following entries have been made and are now subject to an asset freeze [${date}]</strong></p><ul class="uk-entity-list">${items}</ul>`;
   };
 
   const typeLine=selectedTypes.length
