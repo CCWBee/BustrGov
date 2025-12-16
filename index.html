@@ -136,13 +136,37 @@
     .checkbox-group {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
     }
     .checkbox-group label {
       font-weight: 400;
-      display: flex;
-      align-items: center;
       gap: 0.5rem;
+    }
+    .type-label {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: flex-start;
+      gap: 0.75rem 1rem;
+      padding: 0.75rem 0.85rem;
+      border: 1px solid var(--border);
+      background: #f8f9fc;
+    }
+    .type-label input[type="checkbox"] {
+      margin-top: 0.2rem;
+    }
+    .type-label .toggle-label {
+      font-weight: 600;
+    }
+    .type-label .type-date {
+      grid-column: 2;
+      margin-left: 0;
+      width: auto;
+      justify-self: start;
+    }
+    .type-label textarea {
+      grid-column: 2;
+      width: 100%;
+      margin-left: 0;
     }
     .checkbox-group input[type="checkbox"] {
       appearance: none;
@@ -389,7 +413,7 @@ function toggleDateInput(cb){
   const d = document.getElementById(id);
   const ukTextarea=document.getElementById('uk-entity-input');
   if(cb.checked){
-    d.style.display = 'inline-block';
+    d.style.display = 'block';
     if(!d.value) setToday(id);
     if(cb.value==='UK Entity/Individual' && ukTextarea){
       ukTextarea.style.display='block';
